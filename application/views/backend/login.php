@@ -16,34 +16,18 @@
                         </div>
                         <!--/ Brand -->
 
-                        <!-- Social button -->
-                        <ul class="list-table">
-                            <li><button type="button" class="btn btn-block btn-facebook">Connect with <i class="ico-facebook2 ml5"></i></button></li>
-                            <li><button type="button" class="btn btn-block btn-twitter">Connect with <i class="ico-twitter2 ml5"></i></button></li>
-                        </ul>
-                        <!-- Social button -->
-
                         <hr><!-- horizontal line -->
 
                         <!-- Login form -->
-                        <form class="panel" name="form-login" action="">
+                        <form class="panel" name="form-login" action="<?=site_url('login/try_login')?>" method="POST">
                             <div class="panel-body">
-                                <!-- Alert message -->
+                                <?php if(isset($alert) && $alert != ""):?>
                                 <div class="alert alert-warning">
-                                    <span class="semibold">Note :</span>&nbsp;&nbsp;Just put anything and hit 'sign-in' button.
+                                   <?=$alert?>
                                 </div>
+                                <?php endif;?>
                                 <!--/ Alert message -->
-                                <div class="form-group">
-                                    <select class="form-control" name="lang">
-                                        <option value="0">Select language</option>
-                                        <option value="en">English</option>
-                                        <option value="da">Danish - Dansk</option>
-                                        <option value="nl">Dutch - Nederlands</option>
-                                        <option value="en-gb">English - UK</option>
-                                        <option value="fr">French - français</option>
-                                        <option value="de">German - Deutsch</option>
-                                    </select>
-                                </div>
+                                
                                 <div class="form-group">
                                     <div class="form-stack has-icon pull-left">
                                         <input name="username" type="text" class="form-control input-lg" placeholder="Username / email" data-parsley-errors-container="#error-container" data-parsley-error-message="Please fill in your username / email" data-parsley-required>
@@ -67,9 +51,11 @@
                                                 <label for="remember">&nbsp;&nbsp;Remember me</label>   
                                             </div>
                                         </div>
+                                        <!--
                                         <div class="col-xs-6 text-right">
                                             <a href="javascript:void(0);">Lost password?</a>
                                         </div>
+                                        -->
                                     </div>
                                 </div>
                                 <div class="form-group nm">
@@ -81,7 +67,7 @@
 
                         <hr><!-- horizontal line -->
 
-                        <p class="text-muted text-center">Don't have any account? <a class="semibold" href="page-register.html">Sign up to get started</a></p>
+                       <!-- <p class="text-muted text-center">Don't have any account? <a class="semibold" href="page-register.html">Sign up to get started</a></p> -->
                     </div>
                 </div>
                 <!--/ END row -->
